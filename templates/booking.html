@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Booking - LaundryPH</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
+  </head>
+  <body>
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card p-4">
+            <h2 class="mb-4">Laundry Booking</h2>
+            <form method="post">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Service</label>
+                  <select class="form-select" name="service_id" required>
+                    {% for service in services %}
+                      <option value="{{ service.id }}">{{ service.name }} - ₱{{ service.price }} / {{ service.unit }}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Weight (kg) or Quantity</label>
+                  <input type="number" step="0.1" class="form-control" name="weight" placeholder="0" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Pickup Date</label>
+                  <input type="date" class="form-control" name="pickup_date" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Pickup Time</label>
+                  <input type="time" class="form-control" name="pickup_time" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Delivery Date</label>
+                  <input type="date" class="form-control" name="delivery_date" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Delivery Time</label>
+                  <input type="time" class="form-control" name="delivery_time" required>
+                </div>
+                <div class="col-12">
+                  <label class="form-label">Special Instructions</label>
+                  <textarea class="form-control" name="instructions" rows="3"></textarea>
+                </div>
+              </div>
+              <div class="mt-4 text-end">
+                <button class="btn btn-primary">Submit Booking</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>All Laundry Services - LaundryPH</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/styles.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">LaundryPH</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item auth-only"><a class="nav-link" href="services.html">Services</a></li>
+            <li class="nav-item auth-only"><a class="nav-link" href="booking.html">Book Now</a></li>
+            <li class="nav-item guest-only"><a class="nav-link" href="login.html">Login</a></li>
+            <li class="nav-item guest-only"><a class="nav-link" href="register.html">Register</a></li>
+            <li class="nav-item auth-only"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+            <li class="nav-item auth-only"><a class="nav-link" href="order_history.html">Orders</a></li>
+            <li class="nav-item auth-only"><a class="nav-link" href="service_account.html">My Service</a></li>
+            <li class="nav-item auth-only"><button id="logoutButton" class="btn btn-outline-light btn-sm">Logout</button></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container py-5">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-3 mb-4">
+        <div>
+          <h2>Explore Laundry Services</h2>
+          <p class="text-muted mb-0">Browse available service providers, view pricing, and book with your account.</p>
+        </div>
+        <a href="service_account.html" class="btn btn-primary auth-only">Manage My Service</a>
+      </div>
+      <div id="servicesList"></div>
+    </div>
+  </body>
+</html>

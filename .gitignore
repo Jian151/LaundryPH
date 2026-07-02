@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.db
+instance/
+.pytest_cache/
+.venv/
+venv/
+.env
+firebase-debug.log

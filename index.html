@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LaundryPH - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/styles.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">LaundryPH</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item guest-only"><a class="nav-link" href="login.html">Login</a></li>
+            <li class="nav-item guest-only"><a class="nav-link" href="register.html">Register</a></li>
+            <li class="nav-item auth-only"><a class="nav-link" href="services.html">Services</a></li>
+            <li class="nav-item auth-only"><a class="nav-link" href="booking.html">Book Now</a></li>
+            <li class="nav-item auth-only"><a class="nav-link" href="tracking.html">Track</a></li>
+            <li class="nav-item auth-only"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+            <li class="nav-item auth-only"><a class="nav-link" href="order_history.html">Orders</a></li>
+            <li class="nav-item auth-only"><a class="nav-link" href="service_account.html">My Service</a></li>
+            <li class="nav-item auth-only"><button id="logoutButton" class="btn btn-outline-light btn-sm">Logout</button></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero text-center bg-white">
+      <div class="container">
+        <h1>Welcome to LaundryPH</h1>
+        <p class="lead">Fast, reliable laundry pickup and delivery for customers with accounts.</p>
+        <p class="mb-4">Login or register to access services, book orders, and track laundry in real time.</p>
+        <a href="login.html" class="btn btn-primary btn-lg guest-only">Login to Book</a>
+        <a href="booking.html" class="btn btn-primary btn-lg auth-only">Book Now</a>
+      </div>
+    </section>
+
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-8 mx-auto text-center">
+            <h2>Only registered customers can book, track, and view services.</h2>
+            <p class="mb-0">Create an account to manage your laundry orders and service profile securely.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer text-center">
+      <div class="container">
+        <p>Contact us: +63 917 123 4567 | info@laundryph.com</p>
+        <p>Address: Quezon City, Philippines</p>
+      </div>
+    </footer>
+
+  </body>
+</html>

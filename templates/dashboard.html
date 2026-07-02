@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard - LaundryPH</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
+  </head>
+  <body>
+    <div class="container py-4">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-3 mb-4">
+        <div>
+          <h2>Welcome, {{ current_user.name }}</h2>
+          <p class="mb-0">Manage bookings, receipts, and your profile in one place.</p>
+        </div>
+        <div>
+          <a href="/profile" class="btn btn-outline-primary me-2">Profile</a>
+          <a href="/logout" class="btn btn-outline-secondary">Logout</a>
+        </div>
+      </div>
+
+      <div class="row g-3 mb-4">
+        <div class="col-sm-6 col-lg-3">
+          <div class="card p-3 text-center">
+            <div class="text-muted">Orders</div>
+            <h3>{{ orders|length }}</h3>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="card p-3 text-center">
+            <div class="text-muted">Pending</div>
+            <h3>{{ pending }}</h3>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="card p-3 text-center">
+            <div class="text-muted">Delivered</div>
+            <h3>{{ delivered }}</h3>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="card p-3 text-center">
+            <div class="text-muted">Total Spent</div>
+            <h3>₱{{ total_spent }}</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="card p-4 mb-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5>Recent Orders</h5>
+          <a href="/order-history" class="btn btn-sm btn-primary">View All</a>
+        </div>
+        {% if orders %}
+        <div class="table-responsive">
+          <table class="table table-hover align-middle mb-0">
+            <thead>
+              <tr>
+                <th>Order</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th>Pickup</th>
+                <th>Delivery</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for order in orders[:5] %}
+              <tr>
+                <td>{{ order.order_number }}</td>
+                <td>{{ order.status }}</td>
+                <td>₱{{ order.total_price }}</td>
+                <td>{{ order.pickup_date }}</td>
+                <td>{{ order.delivery_date }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        {% else %}
+        <p class="mb-0">No orders yet. <a href="/booking">Create a booking now.</a></p>
+        {% endif %}
+      </div>
+
+      <div class="card p-4">
+        <h5>Quick Actions</h5>
+        <div class="list-group list-group-flush">
+          <a href="/booking" class="list-group-item list-group-item-action">Book laundry service</a>
+          <a href="/order-history" class="list-group-item list-group-item-action">Download receipts</a>
+          <a href="/track" class="list-group-item list-group-item-action">Track an order</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

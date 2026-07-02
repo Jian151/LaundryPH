@@ -1,0 +1,83 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f8f9fa;
+  color: #212529;
+}
+.navbar {
+  background: #0d6efd;
+}
+.navbar-brand, .nav-link, .navbar-text {
+  color: #fff !important;
+}
+.hero {
+  padding: 60px 0;
+}
+.hero h1 {
+  font-size: 2.75rem;
+  font-weight: 700;
+}
+.hero p.lead {
+  font-size: 1.1rem;
+}
+.service-card,
+.card {
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 0 24px rgba(13,110,253,0.08);
+}
+.progress {
+  height: 1.2rem;
+}
+.table-responsive {
+  margin-top: 1rem;
+}
+.btn-primary,
+.btn-outline-primary {
+  min-width: 140px;
+}
+.footer {
+  padding: 30px 0;
+  background: #212529;
+  color: #fff;
+}
+.footer a {
+  color: #adb5bd;
+}
+@media (max-width: 992px) {
+  .hero {
+    padding: 40px 0;
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+}
+@media (max-width: 768px) {
+  .hero {
+    padding: 30px 0;
+  }
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+  .navbar-brand {
+    font-size: 1.1rem;
+  }
+  .card {
+    margin-bottom: 1rem;
+  }
+}
+@media (max-width: 576px) {
+  .hero p.lead {
+    font-size: 1rem;
+  }
+  .btn {
+    width: 100%;
+  }
+}
+
+.auth-only {
+  display: none !important;
+}
+
+.guest-only {
+  display: list-item !important;
+}
